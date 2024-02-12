@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h2 class="m-0">Character details</h2>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <div *ngIf="character">
+        <div class="detail-head mb-4">
+            <img width="100" class="img-fluid" alt="Bad image" src="{{character.image}}" alt="Character Image">
+            <h2 class="m-2 bold-styled">{{ character.name }}</h2>
+        </div>
+        <p class="mb-0 bold-styled">Status: </p><p class="grey-filled">{{ character.status }}</p>
+        <p class="mb-0 bold-styled">Species: </p><p class="grey-filled">{{ character.species }}</p>
+        <p class="mb-0 bold-styled">Type: </p><p class="grey-filled">{{ character.type }}</p>
+        <p class="mb-0 bold-styled">Gender: </p><p class="grey-filled">{{ character.gender }}</p>
+        <p class="mb-0 bold-styled">Origin: </p><p class="grey-filled">{{ character.originName }}</p>
+        <p class="mb-0 bold-styled">Location: </p><p class="grey-filled">{{ character.locationName }}</p>
+        <p class="mb-0 bold-styled">Episodes:</p>
+        <ul class="grey-filled">
+          <li *ngFor="let episode of character.episode"><a href="{{ episode }}">{{ episode }}</a></li>
+        </ul>
+        <a class="pill" [href]="character.url">More Details</a>
+    </div>
+</div>
+<ng-toast *ngIf="isToastrEnabled"></ng-toast>

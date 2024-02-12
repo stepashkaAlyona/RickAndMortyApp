@@ -1,0 +1,96 @@
+<div class="modal-header">
+  <h2 class="m-0">Create character</h2>
+  <button type="button" (click)="fillForm()" title="Fill the form with template values"
+    class="btn btn-outline-light m-1 p-0">
+    <img width="24" class="img-fluid" src="https://img.icons8.com/glyph-neue/64/fantasy--v1.png" alt="fantasy--v1" />
+  </button>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.close()"></button>
+</div>
+<div class="modal-body">
+  <form *ngIf="characterForm" [formGroup]="characterForm" (ngSubmit)="onSubmit()">
+    <div class="form-group p-1">
+      <label for="name">Name*:</label>
+      <input class="form-control" type="text" id="name" formControlName="name" required>
+      @if(characterForm.controls["name"].invalid && characterForm.controls["name"].touched)
+      {
+        <div class="alert">Invalid "Name" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="status">Status*:</label>
+      <input class="form-control" type="text" id="status" formControlName="status" required>
+      @if(characterForm.controls["status"].invalid && characterForm.controls["status"].touched)
+      {
+        <div class="alert">Invalid "Status" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="species">Species*:</label>
+      <input class="form-control" type="text" id="species" formControlName="species" required>
+      @if(characterForm.controls["species"].invalid && characterForm.controls["species"].touched)
+      {
+        <div class="alert">Invalid "Species" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="type">Type:</label>
+      <input class="form-control" type="text" id="type" formControlName="type" required>
+      @if(characterForm.controls["type"].invalid && characterForm.controls["type"].touched)
+      {
+        <div class="alert">Invalid "Type" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="gender">Gender*:</label>
+      <input class="form-control" type="text" id="gender" formControlName="gender" required>
+      @if(characterForm.controls["gender"].invalid && characterForm.controls["gender"].touched)
+      {
+        <div class="alert">Invalid "Gender" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="originName">Origin name*:</label>
+      <input class="form-control" type="text" id="originName" formControlName="originName" required>
+      @if(characterForm.controls["originName"].invalid && characterForm.controls["originName"].touched)
+      {
+        <div class="alert">Invalid "Origin Name" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="locationName">Location name*:</label>
+      <input class="form-control" type="text" id="locationName" formControlName="locationName" required>
+      @if(characterForm.controls["locationName"].invalid && characterForm.controls["locationName"].touched)
+      {
+        <div class="alert">Invalid "Location Name" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="image">Image URL*:</label>
+      <input class="form-control" type="text" id="image" formControlName="image" required>
+      @if(characterForm.controls["image"].invalid && characterForm.controls["image"].touched)
+      {
+        <div class="alert">Invalid "Image" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="episode">Episodes*:</label>
+      <input class="form-control" type="text" id="episode" formControlName="episode" required>
+      @if(characterForm.controls["episode"].invalid && characterForm.controls["episode"].touched)
+      {
+        <div class="alert">Invalid "Episode" value</div>
+      }
+    </div>
+    <div class="form-group p-1">
+      <label for="url">More details URL*:</label>
+      <input class="form-control" type="text" id="url" formControlName="url" required>
+      @if(characterForm.controls["url"].invalid && characterForm.controls["url"].touched)
+      {
+        <div class="alert">Invalid "Url" value</div>
+      }
+    </div>
+    <div class="modal-footer p-0">
+      <button type="submit" [disabled]="characterForm.invalid" class="btn btn-outline-primary p-1">Create</button>
+    </div>
+  </form>
+</div>
+<ng-toast *ngIf="isToastrEnabled"></ng-toast>

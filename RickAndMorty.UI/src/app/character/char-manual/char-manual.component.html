@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h2 class="m-0">How it works</h2>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <ul>
+        <li class="form-group m-1">
+            <p class="note">
+                GET /api/char - Returns a list of characters from the database. If no data exists in the  database, the API should retrieve the data from the free public API, store it in the  database, and return it.
+            </p>
+            <p>
+                This endpoint was used while the main page was loading.
+            </p>
+        </li>
+        <li class="form-group m-1">
+            <p class="note">
+                GET /api/char/id - Returns a single character by ID from the database.
+            </p>
+            <p>
+                This endpoint can be used by clicking on the concrete character tab.
+            </p>
+        </li>
+        <li class="form-group m-1">
+            <p class="note">
+                POST /api/posts - Adds a new character to the database.
+            </p>
+            <p>
+                This endpoint can be used by clicking on the "Create character" button. Creation form can be automaticaly filled by clicking on the "magic stick" button.
+            </p>
+        </li>
+    </ul>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

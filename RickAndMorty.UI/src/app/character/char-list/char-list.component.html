@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let char of characters">
+            <div class="card p-3 hover-div" (click)="onSelect(char.id)">
+                <div class="d-flex flex-row"><img class="img-fluid" alt="Bad image" src={{char.image}} width="130">
+                    <div class="d-flex flex-column ml-2 p-3">
+                        <span>{{char.name}}</span>
+                        <span class="text-black-50">{{char.gender}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+<ng-toast *ngIf="isToastrEnabled"></ng-toast>

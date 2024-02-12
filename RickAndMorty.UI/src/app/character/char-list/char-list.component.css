@@ -1,0 +1,16 @@
+img {
+    border-radius: 50%;
+}
+
+.col-md-4 {
+margin-top: 27px;
+}
+
+.hover-div {
+    background: #fff;
+}
+
+.hover-div:hover {
+    background: #f5f5f5; 
+    cursor: pointer;
+}

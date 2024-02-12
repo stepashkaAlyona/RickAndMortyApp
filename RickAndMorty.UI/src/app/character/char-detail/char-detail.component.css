@@ -1,0 +1,16 @@
+img {
+    border-radius: 50%;
+}
+
+.detail-head {    
+    display: -webkit-inline-box;
+    -webkit-box-align: center;
+}
+
+.grey-filled {
+    background: whitesmoke;
+}
+
+.bold-styled {
+    font-weight: bold;
+}
