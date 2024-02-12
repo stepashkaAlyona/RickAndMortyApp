@@ -3,3 +3,5 @@
 1) run server app
 2) run 'npm i' for ui app
 3) run 'ng s -o' for ui app
+
+p.s. Sqlite database/datatable will be automatically created.
